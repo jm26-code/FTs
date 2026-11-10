@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 #ifndef BUF_SIZE
-#define BUF_SIZE 4 * 1024 * 1024
+#define BUF_SIZE (8 * 1024 * 1024)
 #endif
 
 typedef enum {
@@ -17,7 +17,10 @@ typedef struct __attribute__((packed)) {
 	uint64_t filesize;
 } FileHeader;
 
-/*Funciones del SERVIDOR */
+static int optval;
+char* full_path(FileHeader header);
+
+/* Funciones del SERVIDOR */
 void server_recv(int sockfd, FileHeader header);
 void server_send(int sockfd, FileHeader header);
 

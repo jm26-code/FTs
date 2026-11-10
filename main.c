@@ -20,7 +20,7 @@ int main(int argc, char** argv){
 		server();
 	}
 
-	else if(strcmp(argv[2], "-C") == 0){
+	else if(strcmp(argv[1], "-C") == 0){
 		//Programa del cliente...
 		client(argc, argv);
 	}
